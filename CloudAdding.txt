@@ -1,0 +1,57 @@
+Struggled a lot to set up the vm so, I am writing everything here
+1 - create a vm instance (use free tier configurations)
+2 - Now I will come back to laptop's terminal
+3 - In the local machine i must generate key pair (ssh-keygen)
+4 - I will copy the public key in my vm's authorized keys (VM's terminal)
+	echo 'contents_of_ generated public key' >> ~/.ssh/authorized_keys
+	chmod 700 ~/.ssh
+	chmod 600 ~/.ssh/authorized_keys
+5 - I am copying the folder from my local path to the vm's path
+	scp -r .\* abdullah20@34.148.18.59:~/try_code_compiler
+6 - This command saved my life. Actually there can be more than one key in the authorized_keys
+So we are specifying that we want this key to be connected using this part
+	scp -i C:\Users\User\.ssh\google_compute_engine
+Full command is
+	scp -i C:\Users\User\.ssh\google_compute_engine -r C:\Users\User\OneDrive\Documents\Project_Things_plus_practice\try_code_compiler\* abdullah20@34.148.18.59:~/try_code_compiler/
+
+
+One thing is, to run my web application on a specific port of my vm instance, I need to allow traffic 
+at that port and so I need to allow the port 
+
+ - gcloud auth login
+ - gcloud config set project newprojecttotest-404112
+ - gcloud compute firewall-rules list
+ - gcloud compute firewall-rules create allow-8081 --allow tcp:8081
+
+
+
+Ok, now My server is running forever maybe
+I have installed pm2 like this
+	sudo npm install pm2 -g
+
+Now, I will start api.js by pm2
+	pm2 start api.js
+If I ever want to stop my application, I will write 
+	pm2 stop api
+If I wantt to restart 
+	pm2 restart api
+
+sudo vim /etc/apache2/sites-available/codelabs.conf
+
+<VirtualHost *:80>
+    ServerName codelabs.website
+    ServerAlias www.codelabs.website
+
+    ProxyPass / http://34.148.18.59:3000/
+    ProxyPassReverse / http://34.148.18.59:3000/
+</VirtualHost>
+
+
+
+
+
+
+
+
+scp -i C:\Users\User\.ssh\google_compute_engine -r C:\Users\User\OneDrive\Documents\Project_Things_plus_practice\codelabs\signaling-server\* abdullah20@34.148.18.59:~/rafSS/
+

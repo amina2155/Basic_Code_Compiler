@@ -1,0 +1,9 @@
+codelabssignal.duckdns.org
+
+https://codelabsignal.duckdns.org:4444/
+
+/etc/ssl/certs/selfsigned.crt
+
+/etc/ssl/private/selfsigned.key
+
+ scp -i C:\Users\User\.ssh\google_compute_engine -r C:\Users\User\OneDrive\Documents\Project_Things_plus_practice\codeLabDemo\* abdullah20@34.73.40.110:~/codeLabDemo/

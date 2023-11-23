@@ -1,0 +1,70 @@
+//Sample C code:
+
+
+
+#include <stdio.h> 
+  
+int main() 
+{ 
+    char name[20];   
+    scanf("%s", name); 
+    printf("Your name is %s.", name); 
+    return 0; 
+}
+
+#include <stdio.h> 
+  
+int main() 
+{ 
+    printf("Hello Amina"); 
+    return 0; 
+}
+
+
+
+//Sample Python code:
+
+
+num = float(input())
+
+num_sqrt = num ** 0.5
+print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
+
+
+
+print("Amina")
+
+//Sample C++ code:
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int first_number, second_number, sum;
+    
+  cin >> first_number >> second_number;
+
+  // sum of two numbers in stored in variable sumOfTwoNumbers
+  sum = first_number + second_number;
+
+  // prints sum 
+  cout << first_number << " + " <<  second_number << " = " << sum;     
+
+  return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  cout << "My name is Amina" << endl;     
+
+  return 0;
+}
